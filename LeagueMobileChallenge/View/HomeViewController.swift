@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController {
     
     private var homeFeedItems: [HomeModel] = []
     private var subscriptions = Set<AnyCancellable>()
@@ -18,12 +18,12 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         let view = UITableView(frame: .zero)
         view.showsVerticalScrollIndicator = false
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.contentInset = .init(top: 0, left: 0, bottom: 20, right: 0)
+        view.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         view.allowsSelection = false
         view.dataSource = self
-        view.separatorStyle = .none
+        view.separatorStyle = .singleLine
         view.backgroundColor = .white
-        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        view.register(CustomViewCell.self, forCellReuseIdentifier: "CustomViewCell")
         return view
     }()
     
@@ -41,34 +41,37 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(tableView)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        let topConstraint = NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
-        let leadingConstraint = NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
-        let trailingConstraint = NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
-        view.addConstraints([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
-
-        
+        self.setupView()
         viewModel.outputs.feed.sink { homeModel in
             self.homeFeedItems = homeModel
             self.tableView.reloadData()
         }.store(in: &subscriptions)
     }
     
+    private func setupView() {
+        self.view.addSubview(tableView)
+        self.navigationItem.title = Constants.homeTitle
+        self.setupConstraints()
+    }
     
+    private func setupConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+    }
 }
 
-extension HomeViewController {
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.homeFeedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = self.homeFeedItems[indexPath.row].username
+        let cell = CustomViewCell(homeModel: self.homeFeedItems[indexPath.row])
         return cell
     }
     

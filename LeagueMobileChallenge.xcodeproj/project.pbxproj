@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		7374E94C28A8307400B367FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94B28A8307400B367FB /* Constants.swift */; };
 		7374E94E28A832A800B367FB /* APIServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94D28A832A800B367FB /* APIServiceUtils.swift */; };
 		7374E95028A8366B00B367FB /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94F28A8366B00B367FB /* ServiceModel.swift */; };
+		7374E95728A99F9D00B367FB /* ContentCellSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95528A99F9D00B367FB /* ContentCellSwiftUI.swift */; };
+		7374E95828A99F9D00B367FB /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95628A99F9D00B367FB /* CustomViewCell.swift */; };
 		B6AC694F21E6578D0094A9B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC694E21E6578D0094A9B1 /* AppDelegate.swift */; };
 		B6AC695921E6578F0094A9B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6AC695821E6578F0094A9B1 /* Assets.xcassets */; };
 		B6AC695C21E6578F0094A9B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AC695A21E6578F0094A9B1 /* LaunchScreen.storyboard */; };
@@ -55,6 +57,8 @@
 		7374E94B28A8307400B367FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7374E94D28A832A800B367FB /* APIServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceUtils.swift; sourceTree = "<group>"; };
 		7374E94F28A8366B00B367FB /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		7374E95528A99F9D00B367FB /* ContentCellSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCellSwiftUI.swift; sourceTree = "<group>"; };
+		7374E95628A99F9D00B367FB /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		9E973EA07DC680BB29B1002A /* Pods_LeagueMobileChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueMobileChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE17B652112E8ACDBCA2682C /* Pods-LeagueMobileChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueMobileChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueMobileChallengeUITests/Pods-LeagueMobileChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5EC5EC130097654F1E0F3C6 /* Pods_LeagueMobileChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueMobileChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				7374E94328A82C8900B367FB /* HomeViewController.swift */,
+				7374E95528A99F9D00B367FB /* ContentCellSwiftUI.swift */,
+				7374E95628A99F9D00B367FB /* CustomViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,22 +431,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -453,10 +452,12 @@
 				B6AC69A221ECEC740094A9B1 /* APIController.swift in Sources */,
 				7374E95028A8366B00B367FB /* ServiceModel.swift in Sources */,
 				B6AC694F21E6578D0094A9B1 /* AppDelegate.swift in Sources */,
+				7374E95828A99F9D00B367FB /* CustomViewCell.swift in Sources */,
 				7374E94A28A82ED100B367FB /* HomeModel.swift in Sources */,
 				7374E94428A82C8900B367FB /* HomeViewController.swift in Sources */,
 				7374E94E28A832A800B367FB /* APIServiceUtils.swift in Sources */,
 				7374E94C28A8307400B367FB /* Constants.swift in Sources */,
+				7374E95728A99F9D00B367FB /* ContentCellSwiftUI.swift in Sources */,
 				7374E94628A82CC200B367FB /* HomeViewModel.swift in Sources */,
 				7374E94828A82D0400B367FB /* HomeViewModelInterfaces.swift in Sources */,
 			);
@@ -556,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -611,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

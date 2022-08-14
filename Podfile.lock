@@ -1,22 +1,29 @@
 PODS:
   - Alamofire (4.8.0)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - Kingfisher (6.3.1)
 
 DEPENDENCIES:
-  - Alamofire
-  - SDWebImage (~> 4.0)
+  - Alamofire (= 4.8.0)
+  - "Kingfisher (from `git@github.com:onevcat/Kingfisher.git`, branch `version6-xcode13`)"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
-    - SDWebImage
+
+EXTERNAL SOURCES:
+  Kingfisher:
+    :branch: version6-xcode13
+    :git: "git@github.com:onevcat/Kingfisher.git"
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: d0494dd78f7adf2d3526fdf3267176553020c041
+    :git: "git@github.com:onevcat/Kingfisher.git"
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  Kingfisher: 8b783c3d7be73a99b2172a743a5bc0a4dd331d79
 
-PODFILE CHECKSUM: 830d715317aa432497ba0f9212f98f758da77ce2
+PODFILE CHECKSUM: bcdbce13e96aa607d964f04ff4bb4bbd12959bff
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.3
