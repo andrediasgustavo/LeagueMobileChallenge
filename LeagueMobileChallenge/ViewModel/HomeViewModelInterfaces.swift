@@ -11,7 +11,7 @@ import Foundation
 import Combine
 
 protocol HomeVMInput {
-    func getInfoForHome()
+    func tryAPICallServices()
 }
 
 protocol HomeVMOutput {

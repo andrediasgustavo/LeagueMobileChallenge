@@ -9,8 +9,8 @@
 import Foundation
 import Combine
 
-final class HomeViewModel: NSObject, HomeVMInterfaces {
-
+final class HomeViewModel: ObservableObject, HomeVMInterfaces {
+    
     private var subscriptions = Set<AnyCancellable>()
     private var apiRequest: APIServiceProtocol
     private var usersResult = CurrentValueSubject<[Users]?, Never>([])
@@ -21,8 +21,6 @@ final class HomeViewModel: NSObject, HomeVMInterfaces {
         self.isLoading = self.isLoadingProperty.eraseToAnyPublisher()
         self.feed = self.feedProperty.eraseToAnyPublisher()
         self.error = self.errorProperty.eraseToAnyPublisher()
-        super.init()
-        
         fetchUserToken()
         
         self.readyToBuildHomeModel.sink { isFinished in
@@ -36,13 +34,11 @@ final class HomeViewModel: NSObject, HomeVMInterfaces {
     public var outputs: HomeVMOutput { return self }
     
     // MARK: Input Methods and Variables
-    
     private var isLoadingProperty = CurrentValueSubject<Bool, Never>(false)
     private var errorProperty = PassthroughSubject<String, Never>()
     private var feedProperty = CurrentValueSubject<[HomeModel], Never>([])
     
-    func loadUsers() {
-        self.isLoadingProperty.send(true)
+    private func loadUsers() {
         self.apiRequest.fetchUsers { users, error in
             guard error == nil else {
                 self.errorProperty.send(error!.localizedDescription)
@@ -53,20 +49,20 @@ final class HomeViewModel: NSObject, HomeVMInterfaces {
         }
     }
     
-    func loadPosts() {
-        self.isLoadingProperty.send(true)
+    private func loadPosts() {
+        self.isLoadingProperty.send(false)
         self.apiRequest.fetchPosts { posts, error in
             guard error == nil else {
                 self.errorProperty.send(error!.localizedDescription)
                 self.isLoadingProperty.send(false)
                 return
             }
-            
             self.postsResult.send(posts)
         }
     }
     
     private func fetchUserToken() {
+        self.isLoadingProperty.send(true)
         self.apiRequest.fetchUserToken(userName: "", password: "") { error in
             if error == nil {
                 self.loadUsers()
@@ -78,7 +74,7 @@ final class HomeViewModel: NSObject, HomeVMInterfaces {
         }
     }
     
-    func getInfoForHome(){
+    private func getInfoForHome(){
         if let users = self.usersResult.value, let posts = self.postsResult.value{
             var homeModel: [HomeModel] = []
             let sortedUsers = users.sorted(by: { $0.id > $1.id })
@@ -109,6 +105,10 @@ final class HomeViewModel: NSObject, HomeVMInterfaces {
 
                 return !posts.isEmpty && !users.isEmpty
             }.eraseToAnyPublisher()
+    }
+    
+    func tryAPICallServices() {
+        self.fetchUserToken()
     }
     
     

@@ -15,8 +15,6 @@ public enum APIError: Error {
     case serverError(message: String)
     case corruptData
     case decodingError(String)
-    case dataTaskError(String)
-    case invalidResponseStatus
     case invalidURL
 
     var description: String {
@@ -33,11 +31,6 @@ public enum APIError: Error {
             return string
         case .corruptData:
             return Constants.corruptData
-        case .dataTaskError(let string):
-            return string
-        case .invalidResponseStatus:
-            return Constants.invalidResponseStatus
-            
         }
     }
     

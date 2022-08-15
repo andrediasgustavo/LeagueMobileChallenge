@@ -17,8 +17,8 @@ struct ContentCellSwiftUI: View {
         VStack {
             HStack {
                 KFImage(URL(string: self.homeModel.avatar))
-                    .cacheOriginalImage()
                     .resizable()
+                    .fade(duration: 0.25)
                     .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
                     .frame(width: 48, height: 48)

@@ -29,69 +29,69 @@ final class APIController: APIServiceProtocol {
     fileprivate var userToken: String?
     
     func fetchUserToken(userName: String = "", password: String = "", completion: @escaping (Error?) -> Void) {
-        guard let url = URL(string: loginAPI) else {
-            return
-        }
-        var headers: HTTPHeaders = [:]
-        
-        if let authorizationHeader = Request.authorizationHeader(user: userName, password: password) {
-            headers[authorizationHeader.key] = authorizationHeader.value
-        }
-        
-        Alamofire.request(url, headers: headers).responseJSON { (response) in
-            guard response.error == nil else {
-                let error = self.handleError(error: response.error, statusCode: response.response?.statusCode)
-                completion(error)
-                return
+        if let url = URL(string: loginAPI) {
+            var headers: HTTPHeaders = [:]
+            
+            if let authorizationHeader = Request.authorizationHeader(user: userName, password: password) {
+                headers[authorizationHeader.key] = authorizationHeader.value
             }
             
-            if let value = response.result.value as? [AnyHashable : Any] {
-                self.userToken = value["api_key"] as? String
-                completion(nil)
+            Alamofire.request(url, headers: headers).responseJSON { (response) in
+                guard response.error == nil else {
+                    let error = self.handleError(error: response.error, statusCode: response.response?.statusCode)
+                    completion(error)
+                    return
+                }
+                
+                if let value = response.result.value as? [AnyHashable : Any] {
+                    self.userToken = value["api_key"] as? String
+                    completion(nil)
+                }
             }
+        } else {
+            completion(APIError.invalidURL)
         }
     }
 
     func fetchPosts(completion: @escaping ([Posts]?, Error?) -> Void) {
-        guard let url = URL(string: postAPI) else {
-            return
-        }
-
-        request(url: url) { data, errorTuple in
-            if let data = data {
-                let decoder = JSONDecoder()
-                do {
-                    let decodedData = try decoder.decode([Posts].self, from: data)
-                    completion(decodedData, nil)
-                } catch {
-                    completion(nil, APIError.decodingError(error.localizedDescription))
+        if let url = URL(string: postAPI) {
+            request(url: url) { data, errorTuple in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodedData = try decoder.decode([Posts].self, from: data)
+                        completion(decodedData, nil)
+                    } catch {
+                        completion(nil, APIError.decodingError(error.localizedDescription))
+                    }
+                } else {
+                    let error = self.handleError(error: errorTuple.0, statusCode: errorTuple.1)
+                    completion(nil, error)
                 }
-            } else {
-                let error = self.handleError(error: errorTuple.0, statusCode: errorTuple.1)
-                completion(nil, error)
             }
+        } else {
+            completion(nil, APIError.invalidURL)
         }
     }
     
     func fetchUsers(completion: @escaping ([Users]?, Error?) -> Void) {
-        guard let url = URL(string: userAPI) else {
-            return
-        }
-        request(url: url) { data, errorTuple in
-            if let data = data {
-                let decoder = JSONDecoder()
-                do {
-                    let decodedData = try decoder.decode([Users].self, from: data)
-                    completion(decodedData, nil)
-                } catch {
-                    completion(nil, APIError.decodingError(error.localizedDescription))
+        if let url = URL(string: userAPI) {
+            request(url: url) { data, errorTuple in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodedData = try decoder.decode([Users].self, from: data)
+                        completion(decodedData, nil)
+                    } catch {
+                        completion(nil, APIError.decodingError(error.localizedDescription))
+                    }
+                } else {
+                    let error = self.handleError(error: errorTuple.0, statusCode: errorTuple.1)
+                    completion(nil, error)
                 }
-            } else {
-                let error = self.handleError(error: errorTuple.0, statusCode: errorTuple.1)
-                completion(nil, error)
             }
-
-           
+        } else {
+            completion(nil, APIError.invalidURL)
         }
     }
     
