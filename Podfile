@@ -12,6 +12,8 @@ target 'LeagueMobileChallenge' do
   target 'LeagueMobileChallengeTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire', '4.8.0'
+    pod 'Kingfisher', :git => 'git@github.com:onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   end
 
   target 'LeagueMobileChallengeUITests' do

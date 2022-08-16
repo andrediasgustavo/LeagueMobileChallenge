@@ -12,7 +12,7 @@ import SwiftUI
 
 class HomeViewController: UIViewController {
     
-    private var homeFeedItems: [HomeModel] = []
+    var homeFeedItems: [HomeModel] = []
     private var subscriptions = Set<AnyCancellable>()
     
     private var errorView: UIView?
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         return view
     }()
     
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         view.showsVerticalScrollIndicator = false
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A864FF656992546AD7C544F /* Pods_LeagueMobileChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E973EA07DC680BB29B1002A /* Pods_LeagueMobileChallengeTests.framework */; };
-		5BD7C54FA60BB7570A693C71 /* Pods_LeagueMobileChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09417A2435F74B6BBD872D0B /* Pods_LeagueMobileChallengeUITests.framework */; };
 		7374E94428A82C8900B367FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94328A82C8900B367FB /* HomeViewController.swift */; };
 		7374E94628A82CC200B367FB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94528A82CC200B367FB /* HomeViewModel.swift */; };
 		7374E94828A82D0400B367FB /* HomeViewModelInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E94728A82D0400B367FB /* HomeViewModelInterfaces.swift */; };
@@ -19,24 +18,18 @@
 		7374E95728A99F9D00B367FB /* ContentCellSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95528A99F9D00B367FB /* ContentCellSwiftUI.swift */; };
 		7374E95828A99F9D00B367FB /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95628A99F9D00B367FB /* CustomViewCell.swift */; };
 		7374E95A28A9BFF500B367FB /* ErrorViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95928A9BFF500B367FB /* ErrorViewSwiftUI.swift */; };
+		7374E95C28AB210F00B367FB /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95B28AB210F00B367FB /* HomeViewModelSpec.swift */; };
+		7374E95E28AB24D800B367FB /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95D28AB24D800B367FB /* MockAPIService.swift */; };
+		7374E96028AB46E300B367FB /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7374E95F28AB46E300B367FB /* HomeViewControllerTests.swift */; };
 		B6AC694F21E6578D0094A9B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC694E21E6578D0094A9B1 /* AppDelegate.swift */; };
 		B6AC695921E6578F0094A9B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6AC695821E6578F0094A9B1 /* Assets.xcassets */; };
 		B6AC695C21E6578F0094A9B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6AC695A21E6578F0094A9B1 /* LaunchScreen.storyboard */; };
-		B6AC696721E6578F0094A9B1 /* LeagueMobileChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC696621E6578F0094A9B1 /* LeagueMobileChallengeTests.swift */; };
-		B6AC697221E6578F0094A9B1 /* LeagueMobileChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC697121E6578F0094A9B1 /* LeagueMobileChallengeUITests.swift */; };
 		B6AC69A221ECEC740094A9B1 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC69A121ECEC740094A9B1 /* APIController.swift */; };
 		C711E601661AAB36D173F831 /* Pods_LeagueMobileChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EC5EC130097654F1E0F3C6 /* Pods_LeagueMobileChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		B6AC696321E6578F0094A9B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B6AC694321E6578D0094A9B1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B6AC694A21E6578D0094A9B1;
-			remoteInfo = LeagueMobileChallenge;
-		};
-		B6AC696E21E6578F0094A9B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6AC694321E6578D0094A9B1 /* Project object */;
 			proxyType = 1;
@@ -61,6 +54,9 @@
 		7374E95528A99F9D00B367FB /* ContentCellSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCellSwiftUI.swift; sourceTree = "<group>"; };
 		7374E95628A99F9D00B367FB /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		7374E95928A9BFF500B367FB /* ErrorViewSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewSwiftUI.swift; sourceTree = "<group>"; };
+		7374E95B28AB210F00B367FB /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		7374E95D28AB24D800B367FB /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		7374E95F28AB46E300B367FB /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		9E973EA07DC680BB29B1002A /* Pods_LeagueMobileChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueMobileChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE17B652112E8ACDBCA2682C /* Pods-LeagueMobileChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueMobileChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueMobileChallengeUITests/Pods-LeagueMobileChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5EC5EC130097654F1E0F3C6 /* Pods_LeagueMobileChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueMobileChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,11 +66,7 @@
 		B6AC695B21E6578F0094A9B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6AC695D21E6578F0094A9B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6AC696221E6578F0094A9B1 /* LeagueMobileChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeagueMobileChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6AC696621E6578F0094A9B1 /* LeagueMobileChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueMobileChallengeTests.swift; sourceTree = "<group>"; };
 		B6AC696821E6578F0094A9B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6AC696D21E6578F0094A9B1 /* LeagueMobileChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeagueMobileChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6AC697121E6578F0094A9B1 /* LeagueMobileChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueMobileChallengeUITests.swift; sourceTree = "<group>"; };
-		B6AC697321E6578F0094A9B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6AC69A121ECEC740094A9B1 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		D938A729EC8AE9651EAE0B00 /* Pods-LeagueMobileChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueMobileChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueMobileChallenge/Pods-LeagueMobileChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,14 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A864FF656992546AD7C544F /* Pods_LeagueMobileChallengeTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6AC696A21E6578F0094A9B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5BD7C54FA60BB7570A693C71 /* Pods_LeagueMobileChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +169,6 @@
 			children = (
 				B6AC694D21E6578D0094A9B1 /* LeagueMobileChallenge */,
 				B6AC696521E6578F0094A9B1 /* LeagueMobileChallengeTests */,
-				B6AC697021E6578F0094A9B1 /* LeagueMobileChallengeUITests */,
 				B6AC694C21E6578D0094A9B1 /* Products */,
 				281D10CF534B22485FB8D3D4 /* Pods */,
 				40816A92C89E63A0A9F413CC /* Frameworks */,
@@ -197,7 +180,6 @@
 			children = (
 				B6AC694B21E6578D0094A9B1 /* LeagueMobileChallenge.app */,
 				B6AC696221E6578F0094A9B1 /* LeagueMobileChallengeTests.xctest */,
-				B6AC696D21E6578F0094A9B1 /* LeagueMobileChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,19 +199,12 @@
 		B6AC696521E6578F0094A9B1 /* LeagueMobileChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6AC696621E6578F0094A9B1 /* LeagueMobileChallengeTests.swift */,
+				7374E95B28AB210F00B367FB /* HomeViewModelSpec.swift */,
+				7374E95D28AB24D800B367FB /* MockAPIService.swift */,
+				7374E95F28AB46E300B367FB /* HomeViewControllerTests.swift */,
 				B6AC696821E6578F0094A9B1 /* Info.plist */,
 			);
 			path = LeagueMobileChallengeTests;
-			sourceTree = "<group>";
-		};
-		B6AC697021E6578F0094A9B1 /* LeagueMobileChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B6AC697121E6578F0094A9B1 /* LeagueMobileChallengeUITests.swift */,
-				B6AC697321E6578F0094A9B1 /* Info.plist */,
-			);
-			path = LeagueMobileChallengeUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +237,7 @@
 				B6AC695E21E6578F0094A9B1 /* Sources */,
 				B6AC695F21E6578F0094A9B1 /* Frameworks */,
 				B6AC696021E6578F0094A9B1 /* Resources */,
+				D9069831A51AB6DCF107AF6E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,25 +248,6 @@
 			productName = LeagueMobileChallengeTests;
 			productReference = B6AC696221E6578F0094A9B1 /* LeagueMobileChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B6AC696C21E6578F0094A9B1 /* LeagueMobileChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B6AC697C21E6578F0094A9B1 /* Build configuration list for PBXNativeTarget "LeagueMobileChallengeUITests" */;
-			buildPhases = (
-				BDA280367187E8C9B777DA13 /* [CP] Check Pods Manifest.lock */,
-				B6AC696921E6578F0094A9B1 /* Sources */,
-				B6AC696A21E6578F0094A9B1 /* Frameworks */,
-				B6AC696B21E6578F0094A9B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B6AC696F21E6578F0094A9B1 /* PBXTargetDependency */,
-			);
-			name = LeagueMobileChallengeUITests;
-			productName = LeagueMobileChallengeUITests;
-			productReference = B6AC696D21E6578F0094A9B1 /* LeagueMobileChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -306,10 +263,6 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					B6AC696121E6578F0094A9B1 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = B6AC694A21E6578D0094A9B1;
-					};
-					B6AC696C21E6578F0094A9B1 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = B6AC694A21E6578D0094A9B1;
 					};
@@ -330,7 +283,6 @@
 			targets = (
 				B6AC694A21E6578D0094A9B1 /* LeagueMobileChallenge */,
 				B6AC696121E6578F0094A9B1 /* LeagueMobileChallengeTests */,
-				B6AC696C21E6578F0094A9B1 /* LeagueMobileChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,13 +298,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B6AC696021E6578F0094A9B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6AC696B21E6578F0094A9B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,28 +329,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BDA280367187E8C9B777DA13 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LeagueMobileChallengeUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CDC54F9CFAE4C582D5BF82CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +349,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9069831A51AB6DCF107AF6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallengeTests/Pods-LeagueMobileChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallengeTests/Pods-LeagueMobileChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeagueMobileChallengeTests/Pods-LeagueMobileChallengeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F517B11D1366B1EAB8D39D70 /* [CP] Embed Pods Frameworks */ = {
@@ -471,15 +411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6AC696721E6578F0094A9B1 /* LeagueMobileChallengeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6AC696921E6578F0094A9B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6AC697221E6578F0094A9B1 /* LeagueMobileChallengeUITests.swift in Sources */,
+				7374E95E28AB24D800B367FB /* MockAPIService.swift in Sources */,
+				7374E96028AB46E300B367FB /* HomeViewControllerTests.swift in Sources */,
+				7374E95C28AB210F00B367FB /* HomeViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,11 +424,6 @@
 			isa = PBXTargetDependency;
 			target = B6AC694A21E6578D0094A9B1 /* LeagueMobileChallenge */;
 			targetProxy = B6AC696321E6578F0094A9B1 /* PBXContainerItemProxy */;
-		};
-		B6AC696F21E6578F0094A9B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B6AC694A21E6578D0094A9B1 /* LeagueMobileChallenge */;
-			targetProxy = B6AC696E21E6578F0094A9B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -710,48 +639,6 @@
 			};
 			name = Release;
 		};
-		B6AC697D21E6578F0094A9B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02F12A77B173DEFEAE495835 /* Pods-LeagueMobileChallengeUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RHN4E42P4E;
-				INFOPLIST_FILE = LeagueMobileChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.league.mobileChallenge.LeagueMobileChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LeagueMobileChallenge;
-			};
-			name = Debug;
-		};
-		B6AC697E21E6578F0094A9B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE17B652112E8ACDBCA2682C /* Pods-LeagueMobileChallengeUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RHN4E42P4E;
-				INFOPLIST_FILE = LeagueMobileChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.league.mobileChallenge.LeagueMobileChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LeagueMobileChallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -778,15 +665,6 @@
 			buildConfigurations = (
 				B6AC697A21E6578F0094A9B1 /* Debug */,
 				B6AC697B21E6578F0094A9B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B6AC697C21E6578F0094A9B1 /* Build configuration list for PBXNativeTarget "LeagueMobileChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B6AC697D21E6578F0094A9B1 /* Debug */,
-				B6AC697E21E6578F0094A9B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

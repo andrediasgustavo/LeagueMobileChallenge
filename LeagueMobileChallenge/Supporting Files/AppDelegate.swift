@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         let apiService = APIController()
         let viewModel = HomeViewModel(apiService: apiService)
-        let HomeViewController = HomeViewController(viewModel: viewModel)
-        navigationController.setViewControllers([HomeViewController], animated: false)
+        let homeViewController = HomeViewController(viewModel: viewModel)
+        navigationController.setViewControllers([homeViewController], animated: false)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true

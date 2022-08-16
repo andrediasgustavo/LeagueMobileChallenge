@@ -12,6 +12,9 @@ import Combine
 
 protocol HomeVMInput {
     func tryAPICallServices()
+    func loadUsers()
+    func loadPosts()
+    func fetchUserToken()
 }
 
 protocol HomeVMOutput {

@@ -13,8 +13,9 @@ final class HomeViewModel: ObservableObject, HomeVMInterfaces {
     
     private var subscriptions = Set<AnyCancellable>()
     private var apiRequest: APIServiceProtocol
-    private var usersResult = CurrentValueSubject<[Users]?, Never>([])
-    private var postsResult = CurrentValueSubject<[Posts]?, Never>([])
+    var usersResult = CurrentValueSubject<[Users]?, Never>([])
+    var postsResult = CurrentValueSubject<[Posts]?, Never>([])
+    internal var errorValue: String?
     
     init(apiService: APIServiceProtocol) {
         self.apiRequest = apiService
@@ -38,7 +39,7 @@ final class HomeViewModel: ObservableObject, HomeVMInterfaces {
     private var errorProperty = PassthroughSubject<String, Never>()
     private var feedProperty = CurrentValueSubject<[HomeModel], Never>([])
     
-    private func loadUsers() {
+    func loadUsers() {
         self.apiRequest.fetchUsers { users, error in
             guard error == nil else {
                 self.errorProperty.send(error!.localizedDescription)
@@ -49,7 +50,7 @@ final class HomeViewModel: ObservableObject, HomeVMInterfaces {
         }
     }
     
-    private func loadPosts() {
+    func loadPosts() {
         self.isLoadingProperty.send(false)
         self.apiRequest.fetchPosts { posts, error in
             guard error == nil else {
@@ -61,20 +62,21 @@ final class HomeViewModel: ObservableObject, HomeVMInterfaces {
         }
     }
     
-    private func fetchUserToken() {
+    func fetchUserToken() {
         self.isLoadingProperty.send(true)
         self.apiRequest.fetchUserToken(userName: "", password: "") { error in
             if error == nil {
                 self.loadUsers()
                 self.loadPosts()
             } else {
+                self.errorValue = error?.localizedDescription
                 self.errorProperty.send(error!.localizedDescription)
                 self.isLoadingProperty.send(false)
             }
         }
     }
     
-    private func getInfoForHome(){
+    func getInfoForHome(){
         if let users = self.usersResult.value, let posts = self.postsResult.value{
             var homeModel: [HomeModel] = []
             let sortedUsers = users.sorted(by: { $0.id > $1.id })
@@ -97,7 +99,7 @@ final class HomeViewModel: ObservableObject, HomeVMInterfaces {
         }
     }
     
-    private var readyToBuildHomeModel: AnyPublisher<Bool, Never> {
+    var readyToBuildHomeModel: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest(postsResult, usersResult)
             .map { posts, users in
                 guard let posts = posts else { return false }
