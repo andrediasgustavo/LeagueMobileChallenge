@@ -19,6 +19,6 @@ Add a coodinator layer as the base code is using view code, it would be better t
 Add a Depency injection handler object to make easier to create controllers and consequently flows.
 Add Snapshot tests
 Add more unit testing, to handle error cases.
+Add some CI/CD tool (fastlane, jenkins/bitrise for example)
 
-
-Instructions for testing the app: Just open the LeagueMobileChallenge.xcworkspace and build it and run.
+Instructions for testing the app: Just open the LeagueMobileChallenge.xcworkspace and build it and run.uctions for testing the app: Just open the LeagueMobileChallenge.xcworkspace and build it and run.
